@@ -225,6 +225,7 @@ protected:
   /// MIDI Device short name, defaults to "MIDI" and returns a length of 4 chars
   uint8_t getShortName(char* name);
 
+
 public:
 	/// Creates a MIDI USB device with 2 endpoints
 	MIDI_(void);
@@ -240,6 +241,10 @@ public:
 	size_t write(const uint8_t *buffer, size_t size);
 	/// NIY
 	operator bool();
+
+    /** Returns 0 if port is available and ready to send data.
+     */
+    int isAvailable();
 };
 extern MIDI_ MidiUSB;
 

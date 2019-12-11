@@ -36,6 +36,8 @@ ring_bufferMIDI midi_rx_buffer = {{0,0,0,0 }, 0, 0};
 
 MIDI_ MidiUSB;
 
+int MIDI_::isAvailable() { return USB_Available(MIDI_TX);}
+
 int MIDI_::getInterface(uint8_t* interfaceNum)
 {
 	interfaceNum[0] += 2;	// uses 2 interfaces
